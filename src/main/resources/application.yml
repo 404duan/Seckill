@@ -1,0 +1,73 @@
+spring:
+  thymeleaf:
+    cache: false
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.18.11.234:3386/seckill
+    username: root
+    password: root
+    hikari:
+      pool-name: DataHikariCP
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+  redis:
+    host: 172.18.11.234
+    password: duanqi
+    database: 0
+    timeout: 10000ms
+    lettuce:
+      pool:
+        # 最大连接数
+        max-active: 8
+        # 最大连接阻塞等待时间，默认-1
+        max-wait: 10000ms
+        # 最大空闲连接，8
+        max-idle: 8
+        # 最小空闲连接，默认0
+        min-idle: 5
+
+  rabbitmq:
+    host: 172.18.11.234
+    username: guest
+    password: guest
+    virtual-host: /
+    port: 5672
+    listener:
+      simple:
+        #消费者最小数量
+        concurrency: 10
+        #消费者最大数量
+        max-concurrency: 10
+        #限制消费者每次只处理一条消息，处理完再继续下一条
+        prefetch: 1
+        #启动时是否默认启动容器，默认true
+        auto-startup: true
+        #被拒绝时重新进入队列
+        default-requeue-rejected: true
+    template:
+      retry:
+        #发布重试，默认false
+        enabled: true
+        #重试时间
+        initial-interval: 1000ms
+        #重试最大次数，默认3次
+        max-attempts: 3
+        #重试最大间隔时间，默认10000ms
+        max-interval: 10000ms
+        #重试的间隔倍数，比如配2，第一次等10s，第二次等20s，第三次40s
+        multiplier: 1
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: com.hut.seckill.pojo
+
+logging:
+  level:
+    com.hut.seckill.mapper: debug
