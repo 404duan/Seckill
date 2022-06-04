@@ -42,8 +42,8 @@
 |                      Spring Boot                      | 2.7.0 |                |
 |                         MySQL                         |  5.7  |                |
 | [MyBatis Plus](https://github.com/baomidou/generator) | 3.4.0 |                |
-|                         Redis                         | 5.0.5 | 配置在Docker上 |
-|                       RabbitMQ                        | 3.8.5 | 配置在Docker上 |
+|              [Redis](https://redis.io/)               | 5.0.5 | 配置在Docker上 |
+|         [RabbitMQ](https://www.rabbitmq.com/)         | 3.8.5 | 配置在Docker上 |
 
 
 
