@@ -39,8 +39,8 @@
 
 |                         技术                          | 版本  |      说明      |
 | :---------------------------------------------------: | :---: | :------------: |
-|                      Spring Boot                      | 2.7.0 |                |
-|                         MySQL                         |  5.7  |                |
+| [Spring Boot](https://spring.io/projects/spring-boot) | 2.7.0 |                |
+|            [MySQL](https://www.mysql.com/)            |  5.7  |                |
 | [MyBatis Plus](https://github.com/baomidou/generator) | 3.4.0 |                |
 |              [Redis](https://redis.io/)               | 5.0.5 | 配置在Docker上 |
 |         [RabbitMQ](https://www.rabbitmq.com/)         | 3.8.5 | 配置在Docker上 |
